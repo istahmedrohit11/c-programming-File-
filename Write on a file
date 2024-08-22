@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+    FILE *file;
+    char name[20]="coder ";
+    int length=strlen(name);
+   file= fopen("test.txt","w");
+   // a= add something
+   // w=write something
+   int i;
+   if(file==NULL)
+   printf("File doesnt Exist ");
+   else {
+    printf("File is opened\n");
+    for(i=0;i<length;i++)
+    {
+        fputc(name[i],file);
+    }
+    printf("File is written Successfully");
+    fclose(file);
+   }
+    getch();
+}
