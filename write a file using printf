@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+    FILE *file;
+    char name[40];
+    int age;
+   file= fopen("test.txt","w");
+   if(file==NULL){
+   printf("File doesnt Exist ");
+   }
+   else {
+    printf("File is open\n");
+    printf("Enter your name : ");
+    gets(name);
+    printf("Enter your age : ");
+    scanf("%d",&age);
+    fprintf(file,"Name = %s\n  Age= %d\n",name,age);
+     printf("File is written successfully ");
+    fclose(file);
+   }
+    getch();
+}
+
