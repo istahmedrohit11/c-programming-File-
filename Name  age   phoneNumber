@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+    FILE  *file;
+    char name[20];
+    int age,num,phone;
+    file =fopen("test.txt","a");
+    if(file==NULL){
+        printf("File doesnt exist");
+    }
+    else{
+        printf("File is opened\n");
+        printf("Enter number of students : ");
+        scanf("%d",&num);
+        for(int i=1;i<=num;i++)
+        {
+        printf("Enter student name : ");
+       scanf(" %[^\n]%*c", name);
+        printf("Enter student age : ");
+        scanf("%d",&age);
+        printf("Enter student phone number : ");
+        scanf("%d",&phone);
+        fprintf(file,"\n%s\t\t%d\t%d\n",name,age,phone);
+        }
+        fclose(file);
+    }
+       return 0;
+}
+/*Suppose the user inputs "John Doe":
+    The leading space in the format string skips any extra newlines or spaces.
+    %[^\n] reads "John Doe" into the name variable.
+    %*c reads and discards the newline character after "John Doe".
+    */
