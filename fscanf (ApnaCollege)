@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    FILE *fptr;
+    fptr=fopen("Test.txt","r");
+    char ch;
+    fscanf(fptr,"%c\n",&ch);
+    printf("%c",ch);
+    fclose(fptr);
+    return 0;
+}
+
